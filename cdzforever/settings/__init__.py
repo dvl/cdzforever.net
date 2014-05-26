@@ -2,7 +2,7 @@
 
 import platform
 
-if platform.node() == 'Aiur':
+if platform.node() in ['Aiur', 'belize']:
     from local import *
 else:
     from prod import *
