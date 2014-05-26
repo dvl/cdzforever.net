@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 
-from django.db import models
+from django_pg import models
 
 from . import choices
 
 
 class Serie(models.Model):
+    id = models.UUIDField(auto_add=True, primary_key=True)
+
     nome = models.CharField(max_length=90)
     audio = models.CharField(choices=choices.AUDIO, max_length=5)
     legenda = models.CharField(choices=choices.LEGENDA, max_length=5, blank=True, null=True)
@@ -18,6 +20,8 @@ class Serie(models.Model):
 
 
 class Episodio(models.Model):
+    id = models.UUIDField(auto_add=True, primary_key=True)
+
     serie = models.ForeignKey(Serie)
 
     num = models.IntegerField()
