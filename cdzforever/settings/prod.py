@@ -16,3 +16,4 @@ TEMPLATE_DEBUG = DEBUG
 SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
 STATIC_ROOT = 'staticfiles'
+MEDIA_ROOT = 'media' 
