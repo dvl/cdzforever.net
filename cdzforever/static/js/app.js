@@ -1,1 +1,0 @@
-var episodiosApp = angular.module('episodiosApp', ['mainCtrl', 'episodioService']);
