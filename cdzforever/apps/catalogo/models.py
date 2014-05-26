@@ -28,12 +28,33 @@ class Episodio(models.Model):
     titulo = models.CharField(max_length=90)
     sinopse = models.TextField(blank=True, null=True)
 
-    link = models.URLField()
-    legenda = models.URLField(blank=True, null=True)
-    screenshot = models.URLField(blank=True, null=True)
+    screenshot = models.ImageField(upload_to='media/screenshots', blank=True, null=True)
 
     def __unicode__(self):
         return '%d - %s' % (self.num, self.titulo)
 
     class Meta:
         ordering = ('num', 'titulo')
+
+
+class Servidor(models.Model):
+    id = models.UUIDField(auto_add=True, primary_key=True)
+
+    nome = models.CharField(max_length=90)
+    url = models.URLField()
+
+    def __unicode__(self):
+        return self.nome
+
+
+class Link(models.Model):
+    id = models.UUIDField(auto_add=True, primary_key=True)
+
+    tipo = models.CharField(choices=choices.TIPO_LINK, max_length=10)
+    servidor = models.ForeignKey(Servidor)
+    Episodio = models.ForeignKey(Episodio)
+
+    link = models.URLField()
+
+    def __unicode__(self):
+        return self.link

@@ -2,7 +2,7 @@
 
 from django.contrib import admin
 
-from models import Serie, Episodio
+from models import Servidor, Link, Serie, Episodio
 
 
 class SerieAdmin(admin.ModelAdmin):
@@ -11,11 +11,19 @@ class SerieAdmin(admin.ModelAdmin):
     search_fields = ('nome',)
 
 
+class LinkInline(admin.TabularInline):
+    model = Link
+    extra = 3
+
+
 class EpisodioAdmin(admin.ModelAdmin):
     list_display = ('num', 'titulo', 'serie')
     list_display_links = ('titulo', 'serie')
     list_filter = ('serie',)
     search_fields = ('titulo',)
 
+    inlines = [LinkInline]
+
 admin.site.register(Serie, SerieAdmin)
 admin.site.register(Episodio, EpisodioAdmin)
+admin.site.register(Servidor)

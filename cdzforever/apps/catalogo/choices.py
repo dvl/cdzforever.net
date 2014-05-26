@@ -9,3 +9,8 @@ LEGENDA = (
     (None, 'Sem Legenda'),
     ('PT-BR', u'Português (BR)'),
 )
+
+TIPO_LINK = (
+    ('episodio', u'Episódio'),
+    ('legenda', 'Legenda'),
+)
