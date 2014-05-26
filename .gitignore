@@ -34,7 +34,3 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
-
-# Django
-local_settings.py
-CACHE
