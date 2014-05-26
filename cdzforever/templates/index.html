@@ -1,66 +1,19 @@
-{% load staticfiles %}
-
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CDZForever Episódios</title>
+    <title>{% block title %}{% endblock %}</title>
 
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/cyborg/bootstrap.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <style>
-        .thumb {
-            width: 135px;
-        }
-        .desc {
-            width: 445px;
-        }
-    </style>
 </head>
-<body class="container"  ng-app ng-controller="controller">
-    <div class="col-md-8 col-md-offset-2">
-        <div class="page-header">
-            <h2>Séries</h2>
-        </div>
+<body>
+    <div class="container">
         
-        <ul ng-repeat="serie in series">
-            <li>
-                <a href="#" ng-click="show(serie.pk)">{{ serie.nome }}</a>
-            </li>
-        </ul>
-
-        <input type="search" placehold="titulo">
-
-        <table class="table" ng-hide="loading">
-            <tr ng-repeat="episodio in episodios">
-                <td class="thumb">
-                   <img class="img-thumbnail" src="http://placehold.it/125x70" ng-if="!episodio.screenshot" />
-                   <img class="img-thumbnail" src="{{ episodio.screenshot }}" ng-if="episodio.screenshot" />
-                </td>
-                <td class="desc">
-                    <h4>#{{ episodio.num }} - {{ episodio.titulo }}</h4>
-                    <p ng-if="episodio.sinopse">{{ episodio.sinopse }}</p>
-                </td>
-                <td>
-                    <a href="{{ episodio.link }}" class="btn btn-success btn-block">
-                        <i class="fa fa-download"></i> Download
-                    </a>
-                    <a href="{{ episodio.legenda }}" class="btn btn-info btn-block" ng-if="episodio.legenda">
-                        <i class="fa fa-file-text-o"></i> Legenda
-                    </a>
-                </td>
-            </tr>
-        </table>
-
-        <div class="alert alert-info" ng-hide="episodios">Selecione a série para ver os episódios.</div>
-
-        <p class="text-center" ng-show="loading">
-            <span class="fa fa-meh-o fa-5x fa-spin"></span>
-        </p>
     </div>
-
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.10/angular.min.js"></script>
-
-    <script src="{% static 'js/app.js' %}"></script>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </body>
 </html>
