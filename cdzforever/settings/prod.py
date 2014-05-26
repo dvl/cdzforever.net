@@ -14,3 +14,5 @@ DEBUG = os.environ['DJANGO_DEBUG']
 TEMPLATE_DEBUG = DEBUG
 
 SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+
+STATIC_ROOT = 'staticfiles'
