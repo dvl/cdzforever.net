@@ -52,6 +52,9 @@ class Servidor(models.Model):
     def __unicode__(self):
         return self.nome
 
+    class Meta:
+        ordering = ('nome',)
+
 
 class Link(models.Model):
     id = models.UUIDField(auto_add=True, primary_key=True)
