@@ -6,7 +6,8 @@ from models import Servidor, Link, Serie, Episodio
 
 
 class SerieAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'audio', 'legenda')
+    list_display = ('nome', 'episodios_disponiveis', 'episodios', 'audio',
+                    'legenda')
     list_filter = ('audio', 'legenda')
     search_fields = ('nome',)
 

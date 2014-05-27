@@ -12,11 +12,17 @@ class Serie(models.Model):
     audio = models.CharField(choices=choices.AUDIO, max_length=5)
     legenda = models.CharField(choices=choices.LEGENDA, max_length=5, blank=True, null=True)
 
+    episodios = models.IntegerField('Total de Episódios', blank=True, null=True)
+
     def __unicode__(self):
         return self.nome
 
     class Meta:
         ordering = ('nome',)
+
+    @property
+    def episodios_disponiveis(self):
+        return self.episodio_set.count()    
 
 
 class Episodio(models.Model):
@@ -54,7 +60,7 @@ class Link(models.Model):
     servidor = models.ForeignKey(Servidor)
     Episodio = models.ForeignKey(Episodio)
 
-    link = models.URLField()
+    url = models.URLField()
 
     def __unicode__(self):
-        return self.link
+        return self.url

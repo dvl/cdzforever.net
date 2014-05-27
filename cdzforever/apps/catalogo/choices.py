@@ -3,10 +3,10 @@
 AUDIO = (
     ('JP', u'Japonês'),
     ('PT-BR', u'Português (BR)'),
+    ('Dual', 'Dual Audio')
 )
 
 LEGENDA = (
-    (None, 'Sem Legenda'),
     ('PT-BR', u'Português (BR)'),
 )
 

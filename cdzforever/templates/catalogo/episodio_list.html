@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <th>Screenshot</th>
+            <th>Titulo</th>
+            <th>Links</th>
+            <th>Legenda</th>
+        </thead>
+        <tbody>
+            {% for episodio in object_list %}
+                <tr>
+                    <td>
+                        {% if episodio.screenshot %}
+                            {{ episodio.screenshot.url }}
+                        {% else %}
+                            <img class="img img-thumbnail" src="http://placehold.it/125x70" alt="">
+                        {% endif %}
+                    </td>
+                    <td>
+                        <h4>#{{ episodio.num }} - {{ episodio.titulo }}</h4>
+                        {% if episodio.sinopose %}
+                            <p>{{ episodio.sinopse }}</p>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% for link in episodio.link_set.all %}
+                            {% if link.tipo == 'episodio' %}
+                                <li>
+                                    <a href="{{ link.url }}">
+                                        {{ link.servidor.nome }}
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for link in episodio.link_set.all %}
+                            {% if link.tipo == 'legenda' %}
+                                <li>
+                                    <a href="{{ link.url }}">
+                                        {{ link.servidor.nome }}
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

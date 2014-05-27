@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <th>Nome</th>
+            <th>Episódios</th>
+            <th>Audio</th>
+            <th>Legenda</th>
+        </thead>
+        <tbody>
+            {% for serie in object_list %}
+                <tr>
+                    <td>
+                        <a href="{% url 'catalogo:episodios' serie.pk %}">{{ serie.nome }}</a>
+                    </td>
+                    <td>{{ serie.episodio_set.count }}/{{ serie.episodios|default:"???" }}</td>
+                    <td>{{ serie.get_audio_display }}</td>
+                    <td>{{ serie.get_legenda_display|default:"-" }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

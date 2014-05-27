@@ -1,0 +1,331 @@
+[
+{
+    "pk": "005ed887-d67e-435e-9638-cfb9e30a31d2", 
+    "model": "catalogo.serie", 
+    "fields": {
+        "legenda": "PT-BR", 
+        "audio": "JP", 
+        "episodios": 31, 
+        "nome": "The Hades Chapter"
+    }
+},
+{
+    "pk": "32346b49-da7e-4cca-8ef6-adfb45a13cc4", 
+    "model": "catalogo.serie", 
+    "fields": {
+        "legenda": "PT-BR", 
+        "audio": "Dual", 
+        "episodios": 5, 
+        "nome": "Filmes"
+    }
+},
+{
+    "pk": "bb60d2d3-97fa-401c-ad35-40d0b9a2f9fd", 
+    "model": "catalogo.serie", 
+    "fields": {
+        "legenda": "PT-BR", 
+        "audio": "JP", 
+        "episodios": 26, 
+        "nome": "The Lost Canvas"
+    }
+},
+{
+    "pk": "eda86a94-3b62-433d-9689-d828084a1ebe", 
+    "model": "catalogo.serie", 
+    "fields": {
+        "legenda": null, 
+        "audio": "PT-BR", 
+        "episodios": 13, 
+        "nome": "The Lost Canvas"
+    }
+},
+{
+    "pk": "edcb3779-68d5-4f8f-a814-9944f9516897", 
+    "model": "catalogo.serie", 
+    "fields": {
+        "legenda": "PT-BR", 
+        "audio": "Dual", 
+        "episodios": 114, 
+        "nome": "Os Cavaleiros do Zod\u00edaco"
+    }
+},
+{
+    "pk": "2dbc2d3f-9cfc-4d1e-8c08-0564833a5992", 
+    "model": "catalogo.episodio", 
+    "fields": {
+        "sinopse": "", 
+        "serie": "32346b49-da7e-4cca-8ef6-adfb45a13cc4", 
+        "num": 3, 
+        "screenshot": "", 
+        "titulo": "A Lenda dos Defensores de Atena"
+    }
+},
+{
+    "pk": "5815468c-69c1-4f09-a859-af41a22db020", 
+    "model": "catalogo.episodio", 
+    "fields": {
+        "sinopse": "", 
+        "serie": "32346b49-da7e-4cca-8ef6-adfb45a13cc4", 
+        "num": 5, 
+        "screenshot": "", 
+        "titulo": "Pr\u00f3logo do C\u00e9u"
+    }
+},
+{
+    "pk": "68614d7c-016c-45b6-9489-2428d0d7c7fe", 
+    "model": "catalogo.episodio", 
+    "fields": {
+        "sinopse": "", 
+        "serie": "32346b49-da7e-4cca-8ef6-adfb45a13cc4", 
+        "num": 1, 
+        "screenshot": "", 
+        "titulo": "O Santo Guerreiro"
+    }
+},
+{
+    "pk": "802675bd-0eb9-41cb-b2b5-4e4d0bde0124", 
+    "model": "catalogo.episodio", 
+    "fields": {
+        "sinopse": "", 
+        "serie": "32346b49-da7e-4cca-8ef6-adfb45a13cc4", 
+        "num": 4, 
+        "screenshot": "", 
+        "titulo": "Os Guerreiros do Armageddon"
+    }
+},
+{
+    "pk": "cce2ec84-cf12-4b76-aafc-323a97cf0b25", 
+    "model": "catalogo.episodio", 
+    "fields": {
+        "sinopse": "", 
+        "serie": "32346b49-da7e-4cca-8ef6-adfb45a13cc4", 
+        "num": 2, 
+        "screenshot": "", 
+        "titulo": "A Grande Batalha dos Deuses"
+    }
+},
+{
+    "pk": "74bfc491-67d0-4dec-ada7-498fe6e9ccb2", 
+    "model": "catalogo.servidor", 
+    "fields": {
+        "url": "https://www.minhateca.com.br/", 
+        "nome": "Minhateca"
+    }
+},
+{
+    "pk": "ac1e8c30-0b64-495d-9df9-ecb1dd8b5fae", 
+    "model": "catalogo.servidor", 
+    "fields": {
+        "url": "https://www.4shared.com/", 
+        "nome": "4shared"
+    }
+},
+{
+    "pk": "d8a261e0-408a-42ad-b9b3-c6372b556ff3", 
+    "model": "catalogo.servidor", 
+    "fields": {
+        "url": "https://mega.co.nz/", 
+        "nome": "Mega"
+    }
+},
+{
+    "pk": "1017b16b-a695-4e9b-9a1c-14e0351970cd", 
+    "model": "catalogo.link", 
+    "fields": {
+        "servidor": "d8a261e0-408a-42ad-b9b3-c6372b556ff3", 
+        "url": "https://mega.co.nz/#!v4pT1YyI!7rtWcgRcKuz0YsDn0uOH-Y19tUBoGGO_BOnTV3ey__Q", 
+        "Episodio": "2dbc2d3f-9cfc-4d1e-8c08-0564833a5992", 
+        "tipo": "episodio"
+    }
+},
+{
+    "pk": "14dd5973-84cb-449e-83bc-e2dd09f91758", 
+    "model": "catalogo.link", 
+    "fields": {
+        "servidor": "74bfc491-67d0-4dec-ada7-498fe6e9ccb2", 
+        "url": "http://minhateca.com.br/cdzforever/Filmes/Os.Cavaleiros.do.Zodiaco.01.O.Santo.Guerreiro.DVDRip.H264,2393455.srt", 
+        "Episodio": "68614d7c-016c-45b6-9489-2428d0d7c7fe", 
+        "tipo": "legenda"
+    }
+},
+{
+    "pk": "33ae94d5-8242-4e88-a9af-1cbd3d635ef8", 
+    "model": "catalogo.link", 
+    "fields": {
+        "servidor": "d8a261e0-408a-42ad-b9b3-c6372b556ff3", 
+        "url": "https://mega.co.nz/#!3xBxRaiK!I2PJbeY6a1EHCE6fRQ-iesXu9uvuCPD0G4l_9Kj65xw", 
+        "Episodio": "802675bd-0eb9-41cb-b2b5-4e4d0bde0124", 
+        "tipo": "legenda"
+    }
+},
+{
+    "pk": "3435ddef-0202-4810-8648-3aa5eed39db7", 
+    "model": "catalogo.link", 
+    "fields": {
+        "servidor": "74bfc491-67d0-4dec-ada7-498fe6e9ccb2", 
+        "url": "http://minhateca.com.br/cdzforever/Filmes/Os.Cavaleiros.do.Zodiaco.03.A.Lenda.dos.Defensores.de.Atena.DVDRip.H264,2395156.avi", 
+        "Episodio": "2dbc2d3f-9cfc-4d1e-8c08-0564833a5992", 
+        "tipo": "episodio"
+    }
+},
+{
+    "pk": "4af1e88f-2e87-4b42-8273-af3e5c1aaa6c", 
+    "model": "catalogo.link", 
+    "fields": {
+        "servidor": "d8a261e0-408a-42ad-b9b3-c6372b556ff3", 
+        "url": "https://mega.co.nz/#!r0Q1QYZL!koCvP-oFwqozD_3CKFyjviYYFLd7toSKM3_TrILK2mQ", 
+        "Episodio": "5815468c-69c1-4f09-a859-af41a22db020", 
+        "tipo": "episodio"
+    }
+},
+{
+    "pk": "5dae3562-d96e-41ce-a29f-1761c4e69679", 
+    "model": "catalogo.link", 
+    "fields": {
+        "servidor": "d8a261e0-408a-42ad-b9b3-c6372b556ff3", 
+        "url": "https://mega.co.nz/#!SlRjDCbQ!yv8CE-Mh4z8Fq0pAKTojb1E2ZmTQNBH7z8UUn-Q-XG4", 
+        "Episodio": "68614d7c-016c-45b6-9489-2428d0d7c7fe", 
+        "tipo": "episodio"
+    }
+},
+{
+    "pk": "6d68a9d2-b6e2-4a62-add0-20c89a847703", 
+    "model": "catalogo.link", 
+    "fields": {
+        "servidor": "74bfc491-67d0-4dec-ada7-498fe6e9ccb2", 
+        "url": "http://minhateca.com.br/cdzforever/Filmes/Os.Cavaleiros.do.Zodiaco.02.A.Grande.Batalha.dos.Deuses.DVDRip.H264,2392372.srt", 
+        "Episodio": "cce2ec84-cf12-4b76-aafc-323a97cf0b25", 
+        "tipo": "legenda"
+    }
+},
+{
+    "pk": "86504c22-0ba7-4467-a46d-fcbfb9878d4c", 
+    "model": "catalogo.link", 
+    "fields": {
+        "servidor": "d8a261e0-408a-42ad-b9b3-c6372b556ff3", 
+        "url": "https://mega.co.nz/#!PkIACBSI!vo8Syd2hMQOBss57nrQygIM82cWr4gZ6Izf-00Jp5mQ", 
+        "Episodio": "2dbc2d3f-9cfc-4d1e-8c08-0564833a5992", 
+        "tipo": "legenda"
+    }
+},
+{
+    "pk": "8cb3641a-4b49-4321-98c0-d7ed5d9bf52b", 
+    "model": "catalogo.link", 
+    "fields": {
+        "servidor": "d8a261e0-408a-42ad-b9b3-c6372b556ff3", 
+        "url": "https://mega.co.nz/#!ms5SQS6B!ol94TS0_OC7l52EON2Sa-sOWzeLlKz5EIvS8iLtQK-8", 
+        "Episodio": "cce2ec84-cf12-4b76-aafc-323a97cf0b25", 
+        "tipo": "legenda"
+    }
+},
+{
+    "pk": "96cd48ed-d3a2-460e-a424-80191d955d45", 
+    "model": "catalogo.link", 
+    "fields": {
+        "servidor": "d8a261e0-408a-42ad-b9b3-c6372b556ff3", 
+        "url": "https://mega.co.nz/#!OgIjlI4B!ZMLH52Yr54M7IoxnOoX1ssTlLEPmLMitbwwwi5k4DBU", 
+        "Episodio": "802675bd-0eb9-41cb-b2b5-4e4d0bde0124", 
+        "tipo": "episodio"
+    }
+},
+{
+    "pk": "9cd88560-d712-43de-9554-575ee75fd459", 
+    "model": "catalogo.link", 
+    "fields": {
+        "servidor": "74bfc491-67d0-4dec-ada7-498fe6e9ccb2", 
+        "url": "http://minhateca.com.br/cdzforever/Filmes/Os.Cavaleiros.do.Zodiaco.01.O.Santo.Guerreiro.DVDRip.H264(1),2397935.avi", 
+        "Episodio": "68614d7c-016c-45b6-9489-2428d0d7c7fe", 
+        "tipo": "episodio"
+    }
+},
+{
+    "pk": "a3090620-b92d-434e-8aeb-d5a1126a6d9e", 
+    "model": "catalogo.link", 
+    "fields": {
+        "servidor": "74bfc491-67d0-4dec-ada7-498fe6e9ccb2", 
+        "url": "http://minhateca.com.br/cdzforever/Filmes/Os.Cavaleiros.do.Zodiaco.05.Prologo.do.Ceu.DVD-Rip.XviD,2392093.srt", 
+        "Episodio": "5815468c-69c1-4f09-a859-af41a22db020", 
+        "tipo": "legenda"
+    }
+},
+{
+    "pk": "ae27637a-85c3-48d0-82ff-34b64dbaf8d6", 
+    "model": "catalogo.link", 
+    "fields": {
+        "servidor": "d8a261e0-408a-42ad-b9b3-c6372b556ff3", 
+        "url": "https://mega.co.nz/#!Xxp3kBqL!CJ7pp-XrW7vPpax6pG8kRZAHdjId08fnsOlS4x4wE8g", 
+        "Episodio": "68614d7c-016c-45b6-9489-2428d0d7c7fe", 
+        "tipo": "legenda"
+    }
+},
+{
+    "pk": "b0b38929-9cec-4273-a3f9-d13d51b87427", 
+    "model": "catalogo.link", 
+    "fields": {
+        "servidor": "74bfc491-67d0-4dec-ada7-498fe6e9ccb2", 
+        "url": "http://minhateca.com.br/cdzforever/Filmes/Os.Cavaleiros.do.Zodiaco.04.Os.Guerreiros.do.Armageddon.DVDRip.H264,2392095.srt", 
+        "Episodio": "802675bd-0eb9-41cb-b2b5-4e4d0bde0124", 
+        "tipo": "legenda"
+    }
+},
+{
+    "pk": "b79f0539-be60-4828-ad8b-0ad6ba49c52d", 
+    "model": "catalogo.link", 
+    "fields": {
+        "servidor": "74bfc491-67d0-4dec-ada7-498fe6e9ccb2", 
+        "url": "http://minhateca.com.br/cdzforever/Filmes/Os.Cavaleiros.do.Zodiaco.04.Os.Guerreiros.do.Armageddon.DVDRip.H264,2395030.avi", 
+        "Episodio": "802675bd-0eb9-41cb-b2b5-4e4d0bde0124", 
+        "tipo": "episodio"
+    }
+},
+{
+    "pk": "cecb1efa-4253-4d35-b1ba-a8ed5959d34a", 
+    "model": "catalogo.link", 
+    "fields": {
+        "servidor": "74bfc491-67d0-4dec-ada7-498fe6e9ccb2", 
+        "url": "http://minhateca.com.br/cdzforever/Filmes/Os.Cavaleiros.do.Zodiaco.03.A.Lenda.dos.Defensores.de.Atena.DVDRip.H264,2392097.srt", 
+        "Episodio": "2dbc2d3f-9cfc-4d1e-8c08-0564833a5992", 
+        "tipo": "legenda"
+    }
+},
+{
+    "pk": "d1ad9c74-33fa-478e-b896-cacffc1c078e", 
+    "model": "catalogo.link", 
+    "fields": {
+        "servidor": "d8a261e0-408a-42ad-b9b3-c6372b556ff3", 
+        "url": "https://mega.co.nz/#!GwgUlAyQ!Ix923UvlJWyKTS9IUt9Ty0wOuTzBAAXALj_QHecjxOE", 
+        "Episodio": "5815468c-69c1-4f09-a859-af41a22db020", 
+        "tipo": "legenda"
+    }
+},
+{
+    "pk": "d6bd9c5f-20c3-44c4-b71f-e461262d507f", 
+    "model": "catalogo.link", 
+    "fields": {
+        "servidor": "74bfc491-67d0-4dec-ada7-498fe6e9ccb2", 
+        "url": "http://minhateca.com.br/cdzforever/Filmes/Os.Cavaleiros.do.Zodiaco.05.Prologo.do.Ceu.DVD-Rip.XviD(1),2394662.srt", 
+        "Episodio": "5815468c-69c1-4f09-a859-af41a22db020", 
+        "tipo": "episodio"
+    }
+},
+{
+    "pk": "e854dc06-d6a3-4405-8149-45c081c438f3", 
+    "model": "catalogo.link", 
+    "fields": {
+        "servidor": "d8a261e0-408a-42ad-b9b3-c6372b556ff3", 
+        "url": "https://mega.co.nz/#!ihgjEJwZ!pq9diVOLXvPPMojVbKKxWI5zFxQNgu6oXzlYMfveox0", 
+        "Episodio": "cce2ec84-cf12-4b76-aafc-323a97cf0b25", 
+        "tipo": "episodio"
+    }
+},
+{
+    "pk": "f9000a76-77a0-4eb1-a1f0-96ccead56c5f", 
+    "model": "catalogo.link", 
+    "fields": {
+        "servidor": "74bfc491-67d0-4dec-ada7-498fe6e9ccb2", 
+        "url": "http://minhateca.com.br/cdzforever/Filmes/Os.Cavaleiros.do.Zodiaco.02.A.Grande.Batalha.dos.Deuses.DVDRip.H264,2395301.avi", 
+        "Episodio": "cce2ec84-cf12-4b76-aafc-323a97cf0b25", 
+        "tipo": "episodio"
+    }
+}
+]
