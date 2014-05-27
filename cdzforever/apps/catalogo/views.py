@@ -12,7 +12,7 @@ class SerieListView(ListView):
 class EpisodioListView(ListView):
     model = Episodio
 
-    def get_query_set(self, **kwargs):
+    def get_queryset(self, **kwargs):
         qs = super(EpisodioListView, self).get_queryset(**kwargs)
         qs = qs.filter(serie=self.kwargs['pk'])
 
