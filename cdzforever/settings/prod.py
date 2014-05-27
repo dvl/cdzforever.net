@@ -12,10 +12,10 @@ ALLOWED_HOSTS = ['*']
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-DEBUG = os.getenv('DJANGO_DEBUG', False)
+DEBUG = int(os.environ.get('DJANGO_DEBUG'))
 TEMPLATE_DEBUG = DEBUG
 
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 STATIC_ROOT = 'staticfiles'
 MEDIA_ROOT = 'media'
