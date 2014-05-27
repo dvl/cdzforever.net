@@ -1,1 +1,6 @@
 CDZForever
+
+Instalação
+----------
+
+* python cdzforever/manage.py loaddata catalogo.json
