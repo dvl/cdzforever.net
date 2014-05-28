@@ -12,16 +12,70 @@
     <link rel="stylesheet" href="{% static 'css/site.css' %}">
 </head>
 <body>
-    <div class="container">
-        <div class="col-md-12">
-            {% block content %}{% endblock %}      
+    <header>
+        <div class="container">
+            <h1>CDZForever</h1>
+            <h4>Slogan</h4>
         </div>
-    </div>
+    </header>
+
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="">
+                        <a href="{% url 'index' %}">
+                            <i class="fa fa-university"></i> Home
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="{% url 'catalogo:series' %}">
+                            <i class="fa fa-download"></i> Downloads
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="col-md-8">
+                {% block content %}{% endblock %}
+            </div>
+            <div class="col-md-4">
+                <div class="fb-like-box" data-href="https://www.facebook.com/CDZForever" data-height="550px" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+            </div>
+        </div>
+    </main>
 
     <footer>
         <a href="https://www.facebook.com/CDZForever" title="Facebook"><i class="fa fa-facebook fa-2x"></i></a>
         <a href="https://www.twitter.com/cdz4ever" title="Twitter"><i class="fa fa-twitter fa-2x"></i></a>
         <a href="https://www.github.com/dvl/cdzforever.net" title="GitHub"><i class="fa fa-github fa-2x"></i></a>
     </footer>
+
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=477138722407788&version=v2.0";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </body>
 </html>
