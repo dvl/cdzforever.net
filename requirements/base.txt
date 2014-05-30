@@ -1,6 +1,5 @@
 django==1.6.5
 django-pgfields
-django-randomfilenamestorage
 django-imagekit
 south
 Pillow
