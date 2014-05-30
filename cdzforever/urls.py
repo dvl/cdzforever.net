@@ -13,6 +13,7 @@ urlpatterns = patterns(
 
     url(r'^$', TemplateView.as_view(template_name='index.html'), name='index'),
     url(r'^catalogo/', include('apps.catalogo.urls', namespace='catalogo')),
+    url(r'^pages/', include('django.contrib.flatpages.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
 

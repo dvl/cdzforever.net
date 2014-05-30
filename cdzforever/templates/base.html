@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load staticfiles flatpages %}
 
 <!doctype html>
 <html lang="en">
@@ -15,7 +15,7 @@
     <header>
         <div class="container">
             <h1>CDZForever</h1>
-            <h4>Slogan</h4>
+            <!-- <h4>#CdzForever, desde 2003... 2003!!! Bá quanto tempo. Naquela época o IRC era tão mais divertido...</h4> -->
         </div>
     </header>
 
@@ -41,6 +41,19 @@
                         <a href="{% url 'catalogo:series' %}">
                             <i class="fa fa-download"></i> Downloads
                         </a>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-plus-square"></i> Outros <b class="caret"></b>
+                        </a>
+
+                        {% get_flatpages as flatpages %}
+                        <ul class="dropdown-menu">
+                            {% for page in flatpages %}
+                                <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                            {% endfor %}
+                        </ul>
                     </li>
                 </ul>
 
