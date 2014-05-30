@@ -93,7 +93,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
-# Storage
-
-DEFAULT_FILE_STORAGE = 'django_randomfilenamestorage.storage.RandomFilenameFileSystemStorage'
+MEDIA_URL = '/media/'

@@ -15,7 +15,9 @@
                 <tr>
                     <td>
                         {% if episodio.screenshot %}
-                            {{ episodio.screenshot.url }}
+                            <a href="{{ episodio.screenshot.url }}">
+                                <img class="img img-thumbnail" src="{{ episodio.screenshot_thumbnail.url }}" alt="">
+                            </a>
                         {% else %}
                             <img class="img img-thumbnail" src="http://placehold.it/125x70" alt="">
                         {% endif %}

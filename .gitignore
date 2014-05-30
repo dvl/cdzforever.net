@@ -37,4 +37,5 @@ nosetests.xml
 
 # Project
 screenshots/
+data/
 local.py

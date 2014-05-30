@@ -2,6 +2,9 @@
 
 from django_pg import models
 
+from imagekit.models import ImageSpecField
+from imagekit.processors import ResizeToFill
+
 from . import choices
 
 
@@ -34,7 +37,11 @@ class Episodio(models.Model):
     titulo = models.CharField(max_length=90)
     sinopse = models.TextField(blank=True, null=True)
 
-    screenshot = models.ImageField(upload_to='media/screenshots', blank=True, null=True)
+    screenshot = models.ImageField(upload_to='screenshots', blank=True, null=True)
+    screenshot_thumbnail = ImageSpecField(source='screenshot',
+                                      processors=[ResizeToFill(125, 70)],
+                                      format='JPEG',
+                                      options={'quality': 60})
 
     def __unicode__(self):
         return '%d - %s' % (self.num, self.titulo)
@@ -61,7 +68,7 @@ class Link(models.Model):
 
     tipo = models.CharField(choices=choices.TIPO_LINK, max_length=10)
     servidor = models.ForeignKey(Servidor)
-    Episodio = models.ForeignKey(Episodio)
+    episodio = models.ForeignKey(Episodio)
 
     url = models.URLField()
 
