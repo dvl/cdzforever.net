@@ -48,13 +48,14 @@ class Command(BaseCommand):
 
             for ep in dados:
                 e = Episodio(serie=s, num=ep['num'], titulo=ep['titulo'])
-                e.screenshot.save(os.path.basename(ep['screenshot']), File(open(ep['screenshot'])))
+                # e.screenshot.save(os.path.basename(ep['screenshot']), File(open(ep['screenshot'])))
                 e.save()
 
                 for episodio in ep['links']:
                     l = Link(tipo='episodio', servidor=get_servidor_by_url(episodio), episodio=e, url=episodio)
                     l.save()
 
-                for legenda in ep['links']:
-                    l = Link(tipo='legenda', servidor=get_servidor_by_url(legenda), episodio=e, url=legenda)
-                    l.save()
+                for legenda in ep['legendas']:
+                    if legenda:
+                        l = Link(tipo='legenda', servidor=get_servidor_by_url(legenda), episodio=e, url=legenda)
+                        l.save()
