@@ -1,15 +1,11 @@
 {% extends 'base.html' %}
 
+{% block title %}{{ object_list.0.serie.nome }}{% endblock %}
+
 {% block content %}
     <h1>{{ object_list.0.serie.nome }}</h1>
 
     <table class="table">
-        <thead>
-            <th>Screenshot</th>
-            <th>Titulo</th>
-            <th>Episódio</th>
-            <th>Legenda</th>
-        </thead>
         <tbody>
             {% for episodio in object_list %}
                 <tr>
@@ -23,32 +19,14 @@
                         {% endif %}
                     </td>
                     <td>
-                        <h4>#{{ episodio.num }} - {{ episodio.titulo }}</h4>
+                        <h4>
+                            <a href="{% url 'catalogo:download' episodio.pk %}">
+                                #{{ episodio.num }} - {{ episodio.titulo }}
+                            </a>
+                        </h4>
                         {% if episodio.sinopose %}
                             <p>{{ episodio.sinopse }}</p>
                         {% endif %}
-                    </td>
-                    <td>
-                        {% for link in episodio.link_set.all %}
-                            {% if link.tipo == 'episodio' %}
-                                <li>
-                                    <a href="{{ link.url }}">
-                                        {{ link.servidor.nome }}
-                                    </a>
-                                </li>
-                            {% endif %}
-                        {% endfor %}
-                    </td>
-                    <td>
-                        {% for link in episodio.link_set.all %}
-                            {% if link.tipo == 'legenda' %}
-                                <li>
-                                    <a href="{{ link.url }}">
-                                        {{ link.servidor.nome }}
-                                    </a>
-                                </li>
-                            {% endif %}
-                        {% endfor %}
                     </td>
                 </tr>
             {% endfor %}

@@ -25,7 +25,7 @@ class Serie(models.Model):
 
     @property
     def episodios_disponiveis(self):
-        return self.episodio_set.count()    
+        return self.episodio_set.count()
 
 
 class Episodio(models.Model):
@@ -39,9 +39,9 @@ class Episodio(models.Model):
 
     screenshot = models.ImageField(upload_to='screenshots', blank=True, null=True)
     screenshot_thumbnail = ImageSpecField(source='screenshot',
-                                      processors=[ResizeToFill(125, 70)],
-                                      format='JPEG',
-                                      options={'quality': 60})
+                                          processors=[ResizeToFill(125, 70)],
+                                          format='JPEG',
+                                          options={'quality': 60})
 
     def __unicode__(self):
         return '%d - %s' % (self.num, self.titulo)
@@ -69,6 +69,8 @@ class Link(models.Model):
     tipo = models.CharField(choices=choices.TIPO_LINK, max_length=10)
     servidor = models.ForeignKey(Servidor)
     episodio = models.ForeignKey(Episodio)
+
+    acessos = models.IntegerField(default=0)
 
     url = models.URLField()
 

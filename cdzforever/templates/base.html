@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}CDZForever{% endblock %}</title>
 
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -33,19 +33,20 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="">
-                        <a href="{% url 'index' %}">
-                            <i class="fa fa-university"></i> Home
-                        </a>
+                        <a href="{% url 'index' %}">Home</a>
                     </li>
+                    
                     <li class="">
-                        <a href="{% url 'catalogo:series' %}">
-                            <i class="fa fa-download"></i> Downloads
-                        </a>
+                        <a href="{% url 'catalogo:series' %}">Downloads</a>
                     </li>
+                    
+                    <!-- <li class="">
+                        <a href="">Manga</a>
+                    </li> -->
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-plus-square"></i> Outros <b class="caret"></b>
+                            Outros <b class="caret"></b>
                         </a>
 
                         {% get_flatpages as flatpages %}
@@ -57,12 +58,11 @@
                     </li>
                 </ul>
 
-                <form class="navbar-form navbar-right" role="search">
+                <!-- <form class="navbar-form navbar-right" role="search">
                     <div class="form-group">
                         <input type="search" class="form-control" placeholder="Buscar Episódio">
                     </div>
-                </form>
-
+                </form> -->
             </div>
         </div>
     </nav>
@@ -84,6 +84,7 @@
         <a href="https://www.github.com/dvl/cdzforever.net" title="GitHub"><i class="fa fa-github fa-2x"></i></a>
     </footer>
 
+    {% if not DEBUG %}
     <div id="fb-root"></div>
     <script>
         (function(d, s, id) {
@@ -104,6 +105,7 @@
         ga('create', 'UA-3643001-12', 'cdzforever.net');
         ga('send', 'pageview');
     </script>
+    {% endif %}
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>

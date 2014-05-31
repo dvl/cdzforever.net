@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 from .models import Serie, Episodio
 
@@ -17,3 +17,7 @@ class EpisodioListView(ListView):
         qs = qs.filter(serie=self.kwargs['pk'])
 
         return qs
+
+
+class EpisodioDetailView(DetailView):
+    model = Episodio

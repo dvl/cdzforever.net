@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}#{{ object.num }} - {{ object.titulo }}{% endblock %}
+
+{% block content %}
+    <h1>#{{ object.num }} - {{ object.titulo }}</h1>
+
+    <table class="table">
+        <tr>
+            <th>Idioma do audio:</th>
+            <td>{{ object.serie.get_audio_display }}</td>
+        </tr>
+        <tr>
+            <th>Idioma da Legenda:</th>
+            <td>{{ object.serie.get_legenda_display }}</td>
+        </tr>
+
+        {% regroup object.link_set.all by tipo as links_list %}
+
+        {% for link in links_list %}
+            <tr>
+                <th>{{ link.grouper|title }}</th>
+                <td>
+                    <ul class="list-unstyled">
+                        {% for item in link.list %}
+                            <li>
+                                <a href="{{ item.url }}">{{ item.servidor }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>        
+        {% endfor %}
+
+        <tr>
+            <th>Opções</th>
+            <td>
+                <ul class="list-unstyled">
+                    <li>
+                        <strike>Reportar link quebrado</strike>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+{% endblock %}
