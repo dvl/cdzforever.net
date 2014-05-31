@@ -37,6 +37,8 @@ class Episodio(models.Model):
     titulo = models.CharField(max_length=90)
     sinopse = models.TextField(blank=True, null=True)
 
+    acessos = models.IntegerField(default=0)
+
     screenshot = models.ImageField(upload_to='screenshots', blank=True, null=True)
     screenshot_thumbnail = ImageSpecField(source='screenshot',
                                           processors=[ResizeToFill(125, 70)],
@@ -69,8 +71,6 @@ class Link(models.Model):
     tipo = models.CharField(choices=choices.TIPO_LINK, max_length=10)
     servidor = models.ForeignKey(Servidor)
     episodio = models.ForeignKey(Episodio)
-
-    acessos = models.IntegerField(default=0)
 
     url = models.URLField()
 

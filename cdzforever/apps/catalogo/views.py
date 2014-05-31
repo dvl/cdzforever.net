@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from django.db.models import F
 from django.views.generic import ListView, DetailView
 
 from .models import Serie, Episodio
@@ -21,3 +22,9 @@ class EpisodioListView(ListView):
 
 class EpisodioDetailView(DetailView):
     model = Episodio
+
+    def dispatch(self, request, *args, **kwargs):
+        pk = self.kwargs[self.pk_url_kwarg]
+        self.model.objects.filter(pk=pk).update(acessos=F('acessos') + 1)
+
+        return super(EpisodioDetailView, self).dispatch(request, *args, **kwargs)
