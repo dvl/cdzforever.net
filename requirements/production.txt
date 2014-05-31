@@ -5,5 +5,7 @@ psycopg2
 Collectfast==0.2.0
 gevent==1.0.1
 
+boto
+django-storages
 dj-database-url
 git+https://github.com/kennethreitz/dj-static.git
