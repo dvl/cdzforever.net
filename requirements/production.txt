@@ -6,4 +6,4 @@ Collectfast==0.2.0
 gevent==1.0.1
 
 dj-database-url
-dj-static
+git+https://github.com/kennethreitz/dj-static.git
