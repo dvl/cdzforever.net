@@ -17,8 +17,8 @@ TEMPLATE_DEBUG = DEBUG
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+DEFAULT_FILE_STORAGE = 'libs.storages.S3Storage.S3Storage'
+STATICFILES_STORAGE = DEFAULT_FILE_STORAGE
 
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
