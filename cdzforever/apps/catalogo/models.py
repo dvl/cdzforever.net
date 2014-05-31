@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import os
+
 from django_pg import models
 
 from imagekit.models import ImageSpecField
@@ -47,6 +49,10 @@ class Episodio(models.Model):
 
     def __unicode__(self):
         return '%d - %s' % (self.num, self.titulo)
+
+    @property
+    def screenshot_name(self):
+        return os.path.basename(self.screenshot)
 
     class Meta:
         ordering = ('num', 'titulo')

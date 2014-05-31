@@ -18,7 +18,7 @@ class LinkInline(admin.TabularInline):
 
 
 class EpisodioAdmin(admin.ModelAdmin):
-    list_display = ('num', 'titulo', 'serie', 'acessos')
+    list_display = ('num', 'titulo', 'serie', 'screenshot_name', 'acessos')
     list_display_links = ('titulo', 'serie')
     list_filter = ('serie',)
     search_fields = ('titulo',)
