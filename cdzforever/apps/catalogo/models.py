@@ -52,7 +52,10 @@ class Episodio(models.Model):
 
     @property
     def screenshot_name(self):
-        return os.path.basename(self.screenshot)
+        if self.screenshot:
+            return os.path.basename(self.screenshot.url)
+        else:
+            return '-'
 
     class Meta:
         ordering = ('num', 'titulo')
