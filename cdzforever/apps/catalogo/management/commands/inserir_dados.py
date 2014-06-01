@@ -48,7 +48,7 @@ class Command(BaseCommand):
 
             for ep in dados:
                 e = Episodio(serie=s, num=ep['num'], titulo=ep['titulo'])
-                # e.screenshot.save(os.path.basename(ep['screenshot']), File(open(ep['screenshot'])))
+                e.screenshot.save(os.path.basename(ep['screenshot']), File(open(ep['screenshot'])))
                 e.save()
 
                 for episodio in ep['links']:

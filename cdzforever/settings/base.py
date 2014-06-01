@@ -29,7 +29,6 @@ INSTALLED_APPS = (
     # 3rd
     'south',
     'imagekit',
-    'storages',
     # project
     'apps.catalogo',
 )
