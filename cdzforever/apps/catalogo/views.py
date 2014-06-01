@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from django.db.models import F
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 
+from .forms import ReporteForm
 from .models import Serie, Episodio
 
 
@@ -28,3 +29,9 @@ class EpisodioDetailView(DetailView):
         self.model.objects.filter(pk=pk).update(acessos=F('acessos') + 1)
 
         return super(EpisodioDetailView, self).dispatch(request, *args, **kwargs)
+
+
+class ReporteFormView(CreateView):
+    form_class = ReporteForm
+    template_name = 'catalogo/reporte_form.html'
+

@@ -29,6 +29,7 @@ INSTALLED_APPS = (
     # 3rd
     'south',
     'imagekit',
+    'crispy_forms',
     # project
     'apps.catalogo',
 )
@@ -101,3 +102,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
+
+
+# Forms
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'

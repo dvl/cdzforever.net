@@ -4,6 +4,8 @@ import os
 
 from django_pg import models
 
+from django.core.urlresolvers import reverse
+
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
 
@@ -22,12 +24,15 @@ class Serie(models.Model):
     def __unicode__(self):
         return self.nome
 
-    class Meta:
-        ordering = ('nome',)
-
     @property
     def episodios_disponiveis(self):
         return self.episodio_set.count()
+
+    def get_absolute_url(self):
+        return reverse('catalogo:episodios', args=[self.pk])
+
+    class Meta:
+        ordering = ('nome',)
 
 
 class Episodio(models.Model):
@@ -57,6 +62,9 @@ class Episodio(models.Model):
         else:
             return '-'
 
+    def get_absolute_url(self):
+        return reverse('catalogo:download', args=[self.pk])
+
     class Meta:
         ordering = ('num', 'titulo')
 
@@ -84,4 +92,14 @@ class Link(models.Model):
     url = models.URLField()
 
     def __unicode__(self):
-        return self.url
+        return self.tipo.title()
+
+
+class Reporte(models.Model):
+    link = models.ForeignKey(Link)
+    motivo = models.CharField(choices=choices.REPORTE, max_length=90)
+    descricao = models.TextField('Descrição', blank=True, null=True)
+    email = models.EmailField('E-mail', blank=True, null=True)
+
+    def __unicode__(self):
+        return self.motivo

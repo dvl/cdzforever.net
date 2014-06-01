@@ -2,7 +2,7 @@
 
 from django.contrib import admin
 
-from models import Servidor, Link, Serie, Episodio
+from models import Servidor, Link, Serie, Episodio, Reporte
 
 
 class SerieAdmin(admin.ModelAdmin):
@@ -28,3 +28,4 @@ class EpisodioAdmin(admin.ModelAdmin):
 admin.site.register(Serie, SerieAdmin)
 admin.site.register(Episodio, EpisodioAdmin)
 admin.site.register(Servidor)
+admin.site.register(Reporte)

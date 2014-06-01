@@ -18,27 +18,29 @@ series = {
     'filmes': 'Filmes',
 }
 
-mega = Servidor.objects.get(nome='Mega')
-shared = Servidor.objects.get(nome='4Shared')
-minhateca = Servidor.objects.get(nome='Minhateca')
-
-
-def get_servidor_by_url(url):
-    if 'mega' in url:
-        return mega
-    elif '4shared' in url:
-        return shared
-    elif 'minhateca' in url:
-        return minhateca
-    else:
-        raise Exception('Shit')
-
-
 class Command(BaseCommand):
     help = ''
 
     def handle(self, *args, **options):
         import gerador
+
+        Servidor(nome='Mega', url='https://localhost/').save()
+        Servidor(nome='4Shared', url='https://localhost/').save()
+        Servidor(nome='Minhateca', url='https://localhost/').save()
+
+        mega = Servidor.objects.get(nome='Mega')
+        shared = Servidor.objects.get(nome='4Shared')
+        minhateca = Servidor.objects.get(nome='Minhateca')
+        
+        def get_servidor_by_url(url):
+            if 'mega' in url:
+                return mega
+            elif '4shared' in url:
+                return shared
+            elif 'minhateca' in url:
+                return minhateca
+            else:
+                raise Exception('Shit')
 
         for key, serie in series.iteritems():
             dados = getattr(gerador, key)

@@ -7,6 +7,14 @@
 
     <table class="table">
         <tr>
+            <th>Screenshot:</th>
+            <td>
+                <a href="{{ object.screenshot.url }}">
+                    <img class="img img-thumbnail" src="{{ object.screenshot_thumbnail.url }}">
+                </a>
+            </td>
+        </tr>
+        <tr>
             <th>Idioma do audio:</th>
             <td>{{ object.serie.get_audio_display }}</td>
         </tr>
@@ -37,7 +45,7 @@
             <td>
                 <ul class="list-unstyled">
                     <li>
-                        <strike>Reportar link quebrado</strike>
+                        <a href="{% url 'catalogo:reporte' object.pk %}">Reportar problema com episódio</a>
                     </li>
                 </ul>
             </td>
