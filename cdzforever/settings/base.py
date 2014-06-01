@@ -34,6 +34,7 @@ INSTALLED_APPS = (
     # project
     'apps.blog',
     'apps.catalogo',
+    'apps.manga',
 )
 
 MIDDLEWARE_CLASSES = (

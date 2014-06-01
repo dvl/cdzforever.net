@@ -1,8 +1,1 @@
 CDZForever
-
-Instalação
-----------
-
-* python cdzforever/manage.py loaddata catalogo.json
-* python cdzforever/manage.py migrate catalogo
-
