@@ -8,4 +8,3 @@ gevent==1.0.1
 boto
 django-storages
 dj-database-url
-#git+https://github.com/kennethreitz/dj-static.git

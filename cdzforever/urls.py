@@ -2,15 +2,20 @@
 
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from django.views.generic import TemplateView
+
+from django_markdown import flatpages
+
+from apps.blog.views import PostListView
 
 admin.autodiscover()
+flatpages.register()
 
 urlpatterns = patterns(
     '',
 
-    url(r'^$', TemplateView.as_view(template_name='index.html'), name='index'),
+    url(r'^$', PostListView.as_view(), name='index'),
     url(r'^catalogo/', include('apps.catalogo.urls', namespace='catalogo')),
     url(r'^pages/', include('django.contrib.flatpages.urls')),
+    url(r'^markdown/', include('django_markdown.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )

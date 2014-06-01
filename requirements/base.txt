@@ -2,5 +2,7 @@ django==1.6.5
 django-pgfields
 django-imagekit
 django-crispy-forms
+django-model-utils
+django-markdown
 south
 Pillow

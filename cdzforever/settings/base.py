@@ -27,10 +27,12 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.staticfiles',
     # 3rd
-    'south',
-    'imagekit',
     'crispy_forms',
+    'django_markdown',
+    'imagekit',
+    'south',
     # project
+    'apps.blog',
     'apps.catalogo',
 )
 

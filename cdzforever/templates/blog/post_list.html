@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% load django_markdown %}
+
+{% block content %}
+    {% for post in object_list %}
+        <h2>{{ post.titulo }}</h2>
+        <h5>{{ post.created|date:"d/m/Y @ H:i" }} por {{ post.autor }}</h5>
+
+        {{ post.corpo|markdown }}
+    {% endfor %}
+{% endblock %}
