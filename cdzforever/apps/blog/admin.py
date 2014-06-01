@@ -7,4 +7,16 @@ from django_markdown.admin import MarkdownModelAdmin
 from .models import Post
 
 
-admin.site.register(Post, MarkdownModelAdmin)
+class PostAdmin(MarkdownModelAdmin, admin.ModelAdmin):
+    list_display = ('titulo', 'autor')
+    list_filter = ('autor',)
+    search_fields = ('titulo', 'corpo')
+    fields = ('titulo', 'corpo')
+
+    def save_model(self, request, obj, form, change):
+        if getattr(obj, 'autor', None) is None:
+            obj.autor = request.user
+
+        obj.save()
+
+admin.site.register(Post, PostAdmin)

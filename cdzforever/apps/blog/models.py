@@ -11,7 +11,10 @@ class Post(TimeStampedModel, models.Model):
     titulo = models.CharField(max_length=100)
     corpo = SplitField()
 
-    autor = models.ForeignKey(settings.AUTH_USER_MODEL)
+    autor = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True)
 
     def __unicode__(self):
         return self.titulo
+
+    class Meta:
+        ordering = ('-created',)

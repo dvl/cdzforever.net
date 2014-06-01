@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import os
+
 from django_pg import models
 
 
@@ -36,12 +38,24 @@ class Capitulo(models.Model):
         return '#%s - %s' % (self.num, self.titulo)
 
 
+def pagina_filename(instace, filename):
+    file, ext = os.path.splitext(filename)
+
+    serie = instace.serie.pk
+    capitulo = instace.capitulo.pk
+    pagina = instace.pk
+
+    return os.path.join(serie, capitulo, '%s%s' % (pagina, ext))
+
+
 class Pagina(models.Model):
     id = models.UUIDField(auto_add=True, primary_key=True)
 
     num = models.IntegerField()
 
     capitulo = models.ForeignKey(Capitulo)
+
+    image = models.ImageField(upload_to=pagina_filename)
 
     class Meta:
         ordering = ('num',)
