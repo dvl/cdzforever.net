@@ -10,6 +10,9 @@ DATABASES['default'] = dj_database_url.config()
 
 ALLOWED_HOSTS = ['*']
 
+FACEBOOK_APP_ID = os.environ.get('FACEBOOK_APP_ID')
+FACEBOOK_API_SECRET = os.environ.get('FACEBOOK_API_SECRET')
+
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 INSTALLED_APPS = INSTALLED_APPS + (
