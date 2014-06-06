@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block extra_js %}
+
+{% endblock %}
+
+{% block content %}
+    <h1>Agendar postagem</h1>
+
+    <table>
+        <form action="" method="POST" class="form-horizontal">
+            {% csrf_token %}
+
+            {{ form.as_table }}
+
+            <tr>
+                <td colspan="2">
+                    <button type="submit" class="btn btn-default">Enviar</button>
+                </td>
+            </tr>      
+        </form>
+    </table>
+{% endblock %}

@@ -15,7 +15,7 @@ ALLOWED_HOSTS = []
 
 SITE_ID = 1
 
-FACEBOOK_APP_ID = '1453689538212063'
+FACEBOOK_APP_ID = '1453714041542946'
 FACEBOOK_API_SECRET = ''
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'apps.blog',
     'apps.catalogo',
     'apps.manga',
+    'apps.fbpage',
 )
 
 MIDDLEWARE_CLASSES = (

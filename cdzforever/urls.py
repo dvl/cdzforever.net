@@ -17,6 +17,7 @@ urlpatterns = patterns(
 
     url(r'^catalogo/', include('apps.catalogo.urls', namespace='catalogo')),
     url(r'^manga/', include('apps.manga.urls', namespace='manga')),
+    url(r'^fb/', include('apps.fbpage.urls', namespace='fb')),
 
     url(r'^pages/', include('django.contrib.flatpages.urls')),
 

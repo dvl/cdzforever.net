@@ -10,6 +10,8 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="{% static 'css/site.css' %}">
+
+    {% block extra_css %}{% endblock %}
 </head>
 <body>
     <header>
@@ -90,7 +92,7 @@
           var js, fjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
           js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=477138722407788&version=v2.0";
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1453689538212063&version=v2.0";
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
@@ -107,5 +109,6 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    {% block extra_js %}{% endblock %}
 </body>
 </html>
