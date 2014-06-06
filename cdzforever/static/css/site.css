@@ -34,3 +34,7 @@ footer a {
     text-decoration: none;
     margin-right: 3px;
 }
+
+.center {
+    text-align: center;
+}

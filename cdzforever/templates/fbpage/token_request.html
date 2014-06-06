@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block extra_js %}
+    <script>
+        $(function() { 
+            $('#login-trigger').click(function() { 
+                FB.login(function(response) {
+                    document.location.href="/fb/store_token/";
+                }, 
+                {
+                    scope: 'email, manage_pages, publish_actions',
+                    enable_profile_selector: true
+                });
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block content %}
+    <h1>Autorização</h1>
+
+    <div class="alert alert-warning">
+        <strong>Aviso!!</strong> O Facebook possui um processo manual de
+        aprovação de aplicações que podem usar as contas de usuários para
+        realizar ações no site, para passarmos nesse processo precisariamos
+        de fato que isso fosse uma aplicação publica, com logo e politica de
+        privacidade bem definidas, como não é o caso, para esse sistema funcionar
+        você vai precisar estar cadastrado como desenvolvedor do aplicativo,
+        isso só pode ser feito manualmente por um admin.
+    </div>
+
+    <p>Para processeguir é necessário que você autorize o site a usar
+    sua conta do Facebook para postar os dados na página.</p>
+
+    <p>Clique no botão abaixo para confirmar o acesso</p>
+
+
+    <a href="#" id="login-trigger" class="btn btn-success btn-large">Confirmar</a>
+{% endblock %}

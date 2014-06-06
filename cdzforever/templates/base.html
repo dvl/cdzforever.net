@@ -58,6 +58,20 @@
                             {% endfor %}
                         </ul>
                     </li>
+
+                    {% if request.user.is_staff %}
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Admin <b class="caret"></b>
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{% url 'fb:agendar' %}">Agendar postagens</a>
+                                </li>
+                            </ul>
+                        </li>
+                    {% endif %}
                 </ul>
 
                 <!-- <form class="navbar-form navbar-right" role="search">
@@ -87,15 +101,9 @@
     </footer>
 
     <div id="fb-root"></div>
-    <script>
-        (function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1453689538212063&version=v2.0";
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -107,8 +115,25 @@
         ga('send', 'pageview');
     </script>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: '{{ FACEBOOK_APP_ID }}',
+                xfbml: true,
+                cookie: true,
+                version: 'v2.0'
+            });
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk/debug.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
     {% block extra_js %}{% endblock %}
 </body>
 </html>
