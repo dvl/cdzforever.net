@@ -1,7 +1,6 @@
 ## CDZForever
 
-Funções:
---------
+### Funções:
 
 * blog: Publicações da página inicial usando markdown.
 * catalogo: Gerencia as series, episódios e links para downloads.
