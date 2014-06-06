@@ -32,6 +32,7 @@ class StoreTokenView(LoginRequiredMixin, RedirectView):
         response = super(StoreTokenView, self).get(request, *args, **kwargs)
         response.set_signed_cookie('access_token', user['access_token'],
                                    max_age=7200, httponly=True)
+                                   # segundo facebook o token dura 2 horas
 
         return response
 
@@ -54,7 +55,7 @@ class AgendarFormView(LoginRequiredMixin, FormView):
 
         profile = graph_account.get_object("me/accounts")
 
-        # # Não estou muito certo sobre isso...
+        # Não estou muito certo sobre isso...
         for page in profile['data']:
             if page['name'] == 'CDZForever':
                 page_token = page['access_token']

@@ -1,8 +1,10 @@
 django==1.6.5
-django-pgfields
-django-imagekit
+django-braces
 django-crispy-forms
-django-model-utils
+django-imagekit
 django-markdown
-south
+django-model-utils
+django-pgfields
+facebook-sdk
 Pillow
+south
