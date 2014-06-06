@@ -23,7 +23,5 @@ urlpatterns = patterns(
 
     url(r'^markdown/', include('django_markdown.urls')),
 
-    url(r'', include('social_auth.urls')),
-
     url(r'^admin/', include(admin.site.urls)),
 )
