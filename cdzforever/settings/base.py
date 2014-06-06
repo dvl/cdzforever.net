@@ -15,6 +15,9 @@ ALLOWED_HOSTS = []
 
 SITE_ID = 1
 
+FACEBOOK_APP_ID = '1453689538212063'
+FACEBOOK_API_SECRET = ''
+
 # Application definition
 
 INSTALLED_APPS = (
@@ -30,6 +33,7 @@ INSTALLED_APPS = (
     'crispy_forms',
     'django_markdown',
     'imagekit',
+    'social_auth',
     'south',
     # project
     'apps.blog',
@@ -56,6 +60,11 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.tz',
     'django.core.context_processors.request',
     'django.contrib.messages.context_processors.messages',
+)
+
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.facebook.FacebookBackend',
+    'django.contrib.auth.backends.ModelBackend',
 )
 
 TEMPLATE_DIRS = (
@@ -106,6 +115,11 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 
+# Auth
+
+LOGIN_URL = '/login-form/'
+LOGIN_REDIRECT_URL = '/logged-in/'
+LOGIN_ERROR_URL = '/login-error/'
 
 # Forms
 
