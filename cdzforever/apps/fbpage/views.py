@@ -23,6 +23,8 @@ class StoreTokenView(LoginRequiredMixin, RedirectView):
     url = reverse_lazy('fb:agendar')
 
     def get(self, request, *args, **kwargs):
+        # Se for usar mesmo o redis quero guardar
+        # isso lá e não em cookie
         user = facebook.get_user_from_cookie(
             self.request.COOKIES,
             settings.FACEBOOK_APP_ID,

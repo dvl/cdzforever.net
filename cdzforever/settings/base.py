@@ -18,6 +18,7 @@ SITE_ID = 1
 FACEBOOK_APP_ID = '1453714041542946'
 FACEBOOK_API_SECRET = ''
 
+RQ_SHOW_ADMIN_LINK = True
 
 # Application definition
 
@@ -33,6 +34,7 @@ INSTALLED_APPS = (
     # 3rd
     'crispy_forms',
     'django_markdown',
+    'django_rq',
     'imagekit',
     'south',
     # project
