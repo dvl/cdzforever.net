@@ -32,7 +32,6 @@ INSTALLED_APPS = (
     # 3rd
     'crispy_forms',
     'django_markdown',
-    'django_rq',
     'imagekit',
     'south',
     # project
