@@ -10,13 +10,13 @@ DATABASES['default'] = dj_database_url.config()
 
 RQ_QUEUES = {
     'high': {
-        'USE_REDIS_CACHE': os.getenv('REDISTOGO_URL', 'redis://localhost:6379'),
+        'USE_REDIS_CACHE': os.environ.get('REDISTOGO_URL', 'redis://localhost:6379'),
     },
     'default': {
-        'USE_REDIS_CACHE': os.getenv('REDISTOGO_URL', 'redis://localhost:6379'),
+        'USE_REDIS_CACHE': os.environ.get('REDISTOGO_URL', 'redis://localhost:6379'),
     },
     'low': {
-        'USE_REDIS_CACHE': os.getenv('REDISTOGO_URL', 'redis://localhost:6379'),
+        'USE_REDIS_CACHE': os.environ.get('REDISTOGO_URL', 'redis://localhost:6379'),
     },
 }
 
