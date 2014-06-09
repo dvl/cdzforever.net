@@ -70,7 +70,7 @@ class AgendarFormView(LoginRequiredMixin, FormView):
             data = f.cleaned_data
 
             if data:
-                tmpfile = mkstemp()[1]
+                tmpfile = mkstemp()[1]  # talvez isso de problema com o sistema de arquivos do heroku
 
                 with open(tmpfile, 'w') as f:
                     for c in data['imagem'].chunks():

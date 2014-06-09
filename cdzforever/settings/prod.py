@@ -8,6 +8,18 @@ import dj_database_url
 
 DATABASES['default'] = dj_database_url.config()
 
+RQ_QUEUES = {
+    'high': {
+        'USE_REDIS_CACHE': os.getenv('REDISTOGO_URL', 'redis://localhost:6379'),
+    },
+    'default': {
+        'USE_REDIS_CACHE': os.getenv('REDISTOGO_URL', 'redis://localhost:6379'),
+    },
+    'low': {
+        'USE_REDIS_CACHE': os.getenv('REDISTOGO_URL', 'redis://localhost:6379'),
+    },
+}
+
 ALLOWED_HOSTS = ['*']
 
 FACEBOOK_APP_ID = os.environ.get('FACEBOOK_APP_ID')
@@ -33,3 +45,4 @@ AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 
 STATIC_ROOT = 'staticfiles'
 MEDIA_ROOT = 'media'
+
