@@ -8,18 +8,6 @@ import dj_database_url
 
 DATABASES['default'] = dj_database_url.config()
 
-RQ_QUEUES = {
-    'high': {
-        'USE_REDIS_CACHE': os.environ.get('REDISTOGO_URL', 'redis://localhost:6379'),
-    },
-    'default': {
-        'USE_REDIS_CACHE': os.environ.get('REDISTOGO_URL', 'redis://localhost:6379'),
-    },
-    'low': {
-        'USE_REDIS_CACHE': os.environ.get('REDISTOGO_URL', 'redis://localhost:6379'),
-    },
-}
-
 ALLOWED_HOSTS = ['*']
 
 FACEBOOK_APP_ID = os.environ.get('FACEBOOK_APP_ID')

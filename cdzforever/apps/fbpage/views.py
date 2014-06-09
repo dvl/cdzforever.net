@@ -13,7 +13,6 @@ from braces.views import LoginRequiredMixin
 import facebook
 
 from .forms import AgendarFormSet
-from .jobs import enqueue_photo
 
 
 class TokenRequestView(LoginRequiredMixin, TemplateView):
@@ -70,15 +69,22 @@ class AgendarFormView(LoginRequiredMixin, FormView):
             data = f.cleaned_data
 
             if data:
-                tmpfile = mkstemp()[1]  # talvez isso de problema com o sistema de arquivos do heroku
+                tmp = mkstemp()[1]
 
-                with open(tmpfile, 'w') as f:
+                # São 4 da manhã, e não quero entender agora
+                # o por que o put_photo() só aceita imagens
+                # abertas do disco, nada do File() do Django
+                # ou StringIO
+                with open(tmp, 'w') as f:
                     for c in data['imagem'].chunks():
                         f.write(c)
                     f.close()
 
-                del data['imagem']
-
-                enqueue_photo.delay(graph_page, tmpfile, data)
+                graph_page.put_photo(
+                    image=open(tmp),
+                    message=data['texto'],
+                    published='false',
+                    scheduled_publish_time=data['datahora'].strftime('%s')
+                )
 
         return super(AgendarFormView, self).form_valid(form)
