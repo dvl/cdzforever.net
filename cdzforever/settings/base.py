@@ -33,6 +33,7 @@ INSTALLED_APPS = (
     'crispy_forms',
     'django_markdown',
     'imagekit',
+    'pipeline',
     'south',
     # project
     'apps.blog',
@@ -83,6 +84,7 @@ ROOT_URLCONF = 'urls'
 
 WSGI_APPLICATION = 'wsgi.application'
 
+STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
