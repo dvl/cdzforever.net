@@ -5,7 +5,6 @@ django-markdown
 django-model-utils
 django-pgfields
 django-pipeline
-django-storages
 django==1.6.5
 facebook-sdk
 Pillow
