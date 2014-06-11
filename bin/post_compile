@@ -25,6 +25,12 @@ if [ -f bin/install_nodejs ]; then
         chmod +x bin/install_coffee
         bin/install_coffee
     fi
+
+    if [ -f bin/install_less ]; then
+        echo "-----> Running install_yuglify"
+        chmod +x bin/install_yuglify
+        bin/install_yuglify
+    fi
 fi
 
 if [ -f bin/run_collectstatic ]; then
