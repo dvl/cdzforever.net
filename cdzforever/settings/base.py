@@ -35,9 +35,11 @@ INSTALLED_APPS = (
     'imagekit',
     'pipeline',
     'south',
+    'storages',
     # project
     'apps.blog',
     'apps.catalogo',
+    'apps.core',
     'apps.manga',
     'apps.fbpage',
 )
@@ -50,6 +52,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+    'django.middleware.gzip.GZipMiddleware',
+    'pipeline.middleware.MinifyHTMLMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -62,6 +66,12 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     'django.contrib.messages.context_processors.messages',
     'apps.fbpage.context_processors.inject_fb_app_id',
+)
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'pipeline.finders.PipelineFinder',
 )
 
 AUTHENTICATION_BACKENDS = (
@@ -79,6 +89,10 @@ STATICFILES_DIRS = (
 FIXTURE_DIRS = (
     os.path.join(BASE_DIR, 'fixtures'),
 )
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static-root')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 ROOT_URLCONF = 'urls'
 
@@ -120,3 +134,5 @@ MEDIA_URL = '/media/'
 # Forms
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+from .pipeline import *

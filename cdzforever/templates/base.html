@@ -1,4 +1,4 @@
-{% load staticfiles flatpages %}
+{% load staticfiles flatpages compressed %}
 
 <!doctype html>
 <html lang="en">
@@ -9,7 +9,7 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="{% static 'css/site.css' %}">
+    {% compressed_css 'style' %}
 
     {% block extra_css %}{% endblock %}
 </head>
@@ -133,6 +133,8 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
+
+    {% compressed_js 'script' %}
 
     {% block extra_js %}{% endblock %}
 </body>
