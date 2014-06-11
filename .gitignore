@@ -39,3 +39,5 @@ CACHE/
 screenshots/
 data/
 local.py
+/coffee/site.js
+/less/site.css
