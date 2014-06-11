@@ -98,7 +98,7 @@ ROOT_URLCONF = 'urls'
 
 WSGI_APPLICATION = 'wsgi.application'
 
-STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+STATICFILES_STORAGE = 'pipeline.storage.PipelineStorage'
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases

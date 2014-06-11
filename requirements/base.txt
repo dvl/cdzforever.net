@@ -1,4 +1,3 @@
-boto
 django-braces
 django-crispy-forms
 django-imagekit
