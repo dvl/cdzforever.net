@@ -9,9 +9,13 @@
         <tr>
             <th>Screenshot:</th>
             <td>
+                {% if object.screenshot %}
                 <a href="{{ object.screenshot.url }}">
                     <img class="img img-thumbnail" src="{{ object.screenshot_thumbnail.url }}">
                 </a>
+                {% else %}
+                    <img class="img img-thumbnail" src="http://placehold.it/125x70" alt="">
+                {% endif %}
             </td>
         </tr>
         <tr>

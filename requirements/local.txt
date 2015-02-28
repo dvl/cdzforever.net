@@ -1,5 +1,0 @@
--r base.txt
-coverage==3.7.1
-Sphinx
-
-django-debug-toolbar==1.2
